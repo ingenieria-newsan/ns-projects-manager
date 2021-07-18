@@ -1,0 +1,42 @@
+if project.productCert.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productCertPanel", style="cursor:pointer; cursor: hand") Certificación seguridad eléctrica
+            - if(project.productCert.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+        #productCertPanel( class = project.productCert.closed ? 'collapse' : '' )
+            .row.my-3
+                .col-sm-4
+                    .form-group
+                        label(for="productCertBody").form-label Certificador
+                        input(type="text", name="productCertBody", value=project.productCert.certBody ? project.productCert.certBody : null).form-control
+                .col-sm-4
+                    .form-group
+                        label(for="productCertLab").form-label Laboratorio
+                        input(type="text", name="productCertLab", value=project.productCert.certLab ? project.productCert.certLab : null).form-control
+            .row.my-3
+                .col-sm-3
+                    .form-group
+                        label(for="productCertStarts").form-label Inicio
+                        input(
+                            type="date",
+                            name="productCertStarts",
+                            value=project.productCert.starts ? project.productCert.starts.toISOString().substring(0,10) : null
+                            ).form-control
+                .col-sm-3
+                    .form-group
+                        label(for="productCertEnds").form-label Fin
+                        input(
+                            type="date",
+                            name="productCertEnds",
+                            value=project.productCert.ends ? project.productCert.ends.toISOString().substring(0,10) : null
+                            ).form-control
+                .col-sm-3
+                    .form-group
+                        label(for="productCertStatus").form-label Estado
+                        select(name="productCertStatus").form-select
+                            option(
+                                value=project.productCert.status ? project.productCert.status : 'Pendiente'
+                                ).text-info #{ project.productCert.status ? project.productCert.status : 'Pendiente' }
+                            option(value="Pendiente") Pendiente
+                            option(value="En Proceso") En Proceso
+                            option(value="Finalizado") Finalizado

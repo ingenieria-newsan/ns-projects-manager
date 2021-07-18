@@ -1,0 +1,45 @@
+nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-warning
+    .container
+        a.navbar-brand(href='/')
+            i.bi.bi-kanban
+            |  GPI
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navMenu' aria-controls='navMenu' aria-expanded='false' aria-label='Toggle navigation')
+            i.bi.bi-three-dots-vertical
+        #navMenu.collapse.navbar-collapse
+            ul.navbar-nav.mb-2.mb-lg-0.ms-auto
+                li.nav-item.dropdown
+                    a#proyectosDrop.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Proyectos
+                    ul.dropdown-menu(aria-labelledby='proyectosDrop')
+                        //- li
+                        //-     a.dropdown-item(href='#') Mis Proyectos
+                        //- li
+                        //-     a.dropdown-item(href='#') Todos los Activos
+                        li
+                            a.dropdown-item(href='/proyectos/todos') Todos
+                        li
+                            hr.dropdown-divider
+                        li
+                            a.dropdown-item(href='/proyectos/nuevo') Nuevo
+                li.nav-item.dropdown
+                    a#configDrop.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Informes
+                    ul.dropdown-menu(aria-labelledby='configDrop')
+                        li
+                            a.dropdown-item(href='#') Ver informe
+                        li
+                            a.dropdown-item(href='#') Descargar
+                li.nav-item.dropdown
+                    a#configDrop.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Configuración
+                    ul.dropdown-menu(aria-labelledby='configDrop')
+                        li
+                            a.dropdown-item(href='#') Usuarios
+                        li
+                            hr.dropdown-divider
+                        li
+                            a.dropdown-item(href='#') Parametrización
+                li.nav-item.dropdown
+                    a#usuarioDrop(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false').nav-link.dropdown-toggle Jorge
+                    ul.dropdown-menu(aria-labelledby='usuarioDrop')
+                        li
+                            a.dropdown-item(href='#') Perfil
+                        li
+                            a.dropdown-item(href='#') Salir

@@ -1,0 +1,13 @@
+.p-4.mb-3.border.bg-white
+    span(data-bs-toggle="collapse", data-bs-target="#projectControls", style="cursor:pointer; cursor: hand").lead.d-flex Controles de estado
+        span.ms-auto +
+    #projectControls.collapse.mt-3
+        .form-check
+            input#projectStandBy(type='checkbox', name="projectStandBy", value='true', checked=(project.projectStatus == 10) ).form-check-input
+            label.form-check-label(for='projectStandBy') StandBy
+        .form-check
+            input#projectCancel(type='checkbox', name="projectCancel", value='true', checked=(project.projectStatus == 0) ).form-check-input
+            label.form-check-label(for='projectCancel') Cancelar
+        .form-check
+            input#projectDeleted(type='checkbox', name="projectDeleted", value='true', checked=project.projectDeleted).form-check-input
+            label.form-check-label(for='projectDeleted') Eliminar

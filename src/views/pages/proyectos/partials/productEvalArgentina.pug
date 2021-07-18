@@ -1,0 +1,31 @@
+if project.productEvalArgentina.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productEvalArgentinaPanel", style="cursor:pointer; cursor: hand") Evaluación de producto en Argentina
+            - if(project.productEvalArgentina.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+        #productEvalArgentinaPanel( class = project.productEvalArgentina.closed ? 'collapse' : '' ).row.my-3
+            .col-sm-3
+                .form-group
+                    label(for="productEvalArgentinaStarts").form-label Inicio
+                    input(
+                        type="date",
+                        name="productEvalArgentinaStarts",
+                        value=project.productEvalArgentina.starts ? project.productEvalArgentina.starts.toISOString().substring(0,10) : null
+                        ).form-control
+            .col-sm-3
+                .form-group
+                    label(for="productEvalArgentinaEnds").form-label Fin
+                    input(
+                        type="date",
+                        name="productEvalArgentinaEnds",
+                        value=project.productEvalArgentina.ends ? project.productEvalArgentina.ends.toISOString().substring(0,10) : null
+                        ).form-control
+            .col-sm-3
+                .form-group
+                    label(for="productEvalArgentinaResult").form-label Resultado
+                    select(name="productEvalArgentinaResult").form-select
+                        option(
+                            value=project.productEvalArgentina.result ? project.productEvalArgentina.result : ''
+                            ).text-info #{ project.productEvalArgentina.result ? project.productEvalArgentina.result : 'Seleccione un valor' }
+                        option(value="Rechazado") Rechazado
+                        option(value="Aprobado") Aprobado

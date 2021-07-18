@@ -1,0 +1,12 @@
+if project.productSetup.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productSetupPanel", style="cursor:pointer; cursor: hand") Consolidación GEN-D
+            - if(project.productSetup.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+        #productSetupPanel( class = project.productSetup.closed ? 'collapse' : '' )
+            .row.my-3
+                .col-sm-4
+                    .form-check.form-switch
+                        label.form-check-label(for='productSetupCompleted') Marcar tarea como realizada
+                        input#productSetupCompleted(type='checkbox', value="true", name="productSetupCompleted", checked=project.productSetup.closed).form-check-input
+                        

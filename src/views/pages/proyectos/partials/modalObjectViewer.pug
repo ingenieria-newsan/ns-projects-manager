@@ -1,0 +1,11 @@
+//- objectViewer
+#objectViewer(data-bs-backdrop="static").modal.fade
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                h5.modal-title Documento sin procesar
+                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+            .modal-body
+                code
+                    pre #{project}
+

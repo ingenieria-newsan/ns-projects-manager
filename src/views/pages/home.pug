@@ -1,0 +1,11 @@
+extends ../index.pug
+block main
+    .container-fluid.mt-5
+        .px-4.py-5.my-5.text-center.shadow.bg-white
+            i.d-block.mx-auto.mb-4.bi.bi-kanban.h1.text-warning
+            h1.display-5.fw-bold Gestión Proyectos Ingeniería
+            .col-lg-8.mx-auto
+                p.lead.mb-4 Gestion de los proyectos y tareas del área. Monitoreo de cargas.<br>Informe de gestión. 
+                .d-grid.gap-5.d-sm-flex.justify-content-sm-center
+                    a(href="/proyectos/todos").btn.btn-primary.btn-lg.px-4.gap-3 Proyectos
+                    a(href="/informe").btn.btn-outline-secondary.btn-lg.px-4 Informe

@@ -1,0 +1,62 @@
+extends ../../index.pug
+block main
+    .row.my-5
+        .col-sm-6
+            h1.display-6 Edición
+        .col-sm-6.mb-5
+            h3.d-flex
+                .ms-sm-auto
+                    include partials/projectStatusDisplay.pug
+
+        //- advertencias de estado
+        if project.projectDeleted
+            .alert.alert-danger.mb-5 
+                strong Este proyecto se encuentra eliminado
+
+        if project.productEvalArgentina.result == 'Rechazado' || project.productEvalChina.result == 'Rechazado'
+            .alert.alert-danger.mb-5
+                strong El resultado de una o mas evaluaciones fue 'rechazado', este proyecto se marcará como Finalizado.
+        
+        form(action=`/proyectos/editar/${project._id}`, method="post")
+            .row
+                .col-sm-9
+                    
+                    //- panel de informacion del proyecto
+                    include ./partials/projectInformationPanel.pug
+
+                    //- panel de información del producto 
+                    include ./partials/productInformationPanel.pug
+                
+                    //- evaluación en china
+                    include ./partials/productEvalChina.pug
+
+                    //- evaluación local
+                    include ./partials/productEvalArgentina.pug
+
+                    //- product certification
+                    include ./partials/productCert.pug
+
+                    //- consolidación
+                    include ./partials/productSetup.pug
+
+                .col-sm-3 
+
+                    //- panel de control de estado
+                    include ./partials/stateControlPanel.pug
+
+                    //- panel de tareas requeridas
+                    include ./partials/requiredTaskPanel.pug
+
+                    //- panel de cierre de proyecto
+                    include ./partials/closeProjectPanel.pug
+
+                    //- botones de acción
+                    .form-group.d-flex.px-4
+                        input(type="reset", value="Borrar cambios").btn.btn-secondary
+                        input(type="submit", value="Guardar").btn.btn-primary.ms-auto
+
+                    //- objectViewer
+                    include ./partials/modalObjectViewer.pug
+        
+        //- vista de objeto json
+        small(data-bs-toggle="modal", data-bs-target="#objectViewer", style="cursor:pointer; cursor: hand").text-muted.text-center.my-3 Mostrar documento sin procesar

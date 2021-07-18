@@ -1,0 +1,21 @@
+extends ../../index.pug
+block main
+    .my-5
+        h1.display-6.mb-5 Todos los proyectos
+        each project in projects
+                .px-4.py-3.mb-3.border.bg-white(onclick=`location.href='/proyectos/editar/${project._id}'`)
+                    .row.d-flex
+                        .col-sm-2
+                            //- statusDisplayer
+                            include partials/projectStatusDisplay.pug
+                        .col-sm-4.text-uppercase #{project.productType} #{project.productBrand} #{project.productModel}
+                        .col-sm-4.text-muted.overflow-hidden #{project.productDescription}
+                        .col-sm-2.text-info #{project.projectLeader}
+                    //-.row
+                        .col-sm-3
+                            
+                        .col-sm-3
+                            .text-muted #{project.supplierName} #{project.supplierModel}
+
+                        .col-sm-3
+                            .text-muted (#{project.projectBiz})

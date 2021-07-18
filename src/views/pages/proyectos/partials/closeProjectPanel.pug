@@ -1,0 +1,12 @@
+if project.projectStatus >= 40
+    .p-4.mb-3.border.bg-white
+        .lead Cierre de proyecto
+        .row.my-3
+            .col-12
+                .form-group
+                    label(for="projectCloseDate").form-label PSI o Fabricación
+                    input(
+                        type="date",
+                        name="projectCloseDate",
+                        value=project.projectCloseDate ? project.projectCloseDate.toISOString().substring(0,10) : null
+                        ).form-control

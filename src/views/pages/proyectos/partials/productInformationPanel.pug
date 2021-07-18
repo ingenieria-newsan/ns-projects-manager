@@ -1,0 +1,40 @@
+.p-4.mb-3.border.bg-white
+    span(data-bs-toggle="collapse", data-bs-target="#productInformation", style="cursor:pointer; cursor: hand").lead.d-flex Información del producto
+        span.ms-auto -
+    #productInformation.mt-3
+        .row.mb-3
+            .col-sm-4
+                .form-group
+                    label(for="productBrand").form-label Marca
+                    select(name="productBrand").form-select
+                        option(value=project.productBrand) #{project.productBrand}
+                        each item in options.productBrand
+                            option(value=item) #{item}
+            .col-sm-4                    
+                .form-group
+                    label(for="productModel").form-label Modelo
+                    input(type="text", name="productModel", value=project.productModel).form-control
+        .row.mb-3
+            .col-sm-12
+                .form-group
+                    label(for="productDescription").form-label Descripción
+                    input(type="text", name="productDescription", value=project.productDescription).form-control
+        .row
+            .col-sm-4
+                .form-group
+                    label(for="supplierName").form-label Proveedor
+                    select(name="supplierName").form-select
+                        option(value=project.supplierName) #{project.supplierName}
+                        each item in options.supplierName
+                            option(value=item) #{item}                                     
+            .col-sm-4
+                .form-group
+                    label(for="supplierModel").form-label Modelo Proveedor
+                    input(type="text", name="supplierModel", value=project.supplierModel).form-control
+            .col-sm-4
+                .form-group
+                    label(for="facilityName").form-label Fábrica
+                    select(name="facilityName").form-select
+                        option(value=project.facilityName) #{project.facilityName}
+                        each item in options.facilityName
+                            option(value=item) #{item}

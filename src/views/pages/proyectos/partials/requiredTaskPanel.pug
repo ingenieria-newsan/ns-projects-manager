@@ -1,0 +1,40 @@
+.p-4.mb-3.border.bg-white
+    span(data-bs-toggle="collapse", data-bs-target="#projectTasks", style="cursor:pointer; cursor: hand").lead.d-flex Tareas requeridas
+        span.ms-auto +
+    #projectTasks.collapse.mt-3
+        .form-check
+            input#productEvalChina(type='checkbox', name="productEvalChinaRequired", value='true', checked=project.productEvalChina.required).form-check-input
+            label(for='productEvalChina').form-check-label Evaluación en China
+        .form-check
+            input#productEvalArgentina(type='checkbox', name="productEvalArgentinaRequired", value='true', checked=project.productEvalArgentina.required).form-check-input
+            label.form-check-label(for='productEvalArgentina') Evaluación local
+        .form-check
+            input#productCert(type='checkbox', name="productCertRequired" value='true', checked=project.productCert.required).form-check-input
+            label.form-check-label(for='productCert') Certificación seguridad eléctrica
+        .form-check
+            input#productSetup(type='checkbox', name="productSetupRequired" value='true', checked=project.productSetup.required).form-check-input
+            label.form-check-label(for='productSetup') Consolidación GEN-D
+        .form-check
+            input#productRatingLabel(type='checkbox', name="productRatingLabelRequired" value='true', checked=project.productRatingLabel.required).form-check-input
+            label.form-check-label(for='productRatingLabel') Etiqueta de identificación            
+        .form-check
+            input#productUserManual(type='checkbox', name="productUserManualRequired" value='true', checked=project.productUserManual.required).form-check-input
+            label.form-check-label(for='productUserManual') Manual de usuario
+        .form-check
+            input#productGiftBox(type='checkbox', name="productGiftBoxRequired" value='true', checked=project.productGiftBox.required).form-check-input
+            label.form-check-label(for='productGiftBox') Embalaje unitario
+        .form-check
+            input#productMasterBox(type='checkbox', name="productMasterBoxRequired" value='true', checked=project.productMasterBox.required).form-check-input
+            label.form-check-label(for='productMasterBox') Embalaje múltiple
+        .form-check
+            input#productSoftware(type='checkbox', name="productSoftwareRequired" value='true', checked=project.productSoftware.required).form-check-input
+            label.form-check-label(for='productSoftware') Software o firmware
+        .form-check
+            input#productBom(type='checkbox', name="productBomRequired" value='true', checked=project.productBom.required).form-check-input
+            label.form-check-label(for='productBom') Lista de materiales
+        .form-check
+            input#productEnacom(type='checkbox', name="productEnacomRequired" value='true', checked=project.productEnacom.required).form-check-input
+            label.form-check-label(for='productEnacom') Homologación ENACOM
+        .form-check
+            input#productEficiency(type='checkbox', name="productEficiencyRequired" value='true', checked=project.productEficiency.required).form-check-input
+            label.form-check-label(for='productEficiency') Eficiencia Energética

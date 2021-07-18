@@ -1,0 +1,32 @@
+if project.productEvalChina.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productEvalChinaPanel", style="cursor:pointer; cursor: hand") Evaluación de producto en China
+            - if(project.productEvalChina.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+                //- ( class = project.productEvalChina.closed ? 'collapse' : '' )
+        #productEvalChinaPanel( class = project.productEvalChina.closed ? 'collapse' : '' ).row.my-3
+            .col-sm-3
+                .form-group
+                    label(for="productEvalChinaStarts").form-label Inicio
+                    input(
+                        type="date",
+                        name="productEvalChinaStarts",
+                        value=project.productEvalChina.starts ? project.productEvalChina.starts.toISOString().substring(0,10) : ''
+                        ).form-control
+            .col-sm-3
+                .form-group
+                    label(for="productEvalChinaEnds").form-label Fin
+                    input(
+                        type="date",
+                        name="productEvalChinaEnds",
+                        value=project.productEvalChina.ends ? project.productEvalChina.ends.toISOString().substring(0,10) : ''
+                        ).form-control
+            .col-sm-3
+                .form-group
+                    label(for="productEvalChinaResult").form-label Resultado
+                    select(name="productEvalChinaResult").form-select
+                        option(
+                            value=project.productEvalChina.result ? project.productEvalChina.result : ''
+                            ).text-info #{ project.productEvalChina.result ? project.productEvalChina.result : 'Seleccione un valor' }
+                        option(value="Rechazado") Rechazado
+                        option(value="Aprobado") Aprobado

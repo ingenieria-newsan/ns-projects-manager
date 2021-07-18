@@ -1,0 +1,38 @@
+.p-4.mb-3.border.bg-white
+    span(data-bs-toggle="collapse", data-bs-target="#projectInformation", style="cursor:pointer; cursor: hand").lead.d-flex Información del proyecto
+        span.ms-auto +
+    #projectInformation.collapse.mt-3
+        .row
+            .col-sm-4.mb-3
+                .form-group
+                    label(for="projectBiz").form-label Negocio
+                    select(name="projectBiz", required="true").form-select
+                        option(value=project.projectBiz) #{project.projectBiz}
+                        each item in options.projectBiz
+                            option(value=item) #{item}
+            .col-sm-4      
+                .form-group
+                    label(for="productType").form-label Producto
+                    select(name="productType", required="true", selected=project.productType).form-select
+                        option(value=project.productType) #{project.productType}
+                        each item in options.productType
+                            option(value=item) #{item}
+            .col-sm-2
+                .form-group
+                    label(for="productionSchema").form-label Esquema
+                    select(name="productionSchema", required="true").form-select
+                        option(value=project.productionSchema) #{project.productionSchema}
+                        each item in options.productionSchema
+                            option(value=item) #{item}
+        .row
+            .col-sm-6
+                .form-group
+                    label(for="projectLeader", required="true").form-label Lider del proyecto
+                    select(name="projectLeader", required="true").form-select
+                        option(value=project.projectLeader) #{project.projectLeader}
+                        each item in options.projectLeader
+                            option(value=item) #{item}                                    
+            .col-sm-3
+                .form-group
+                    label(for="projectRequiredDate").form-label Demanda
+                    input(type="date", name="projectRequiredDate", value=project.projectRequiredDate).form-control

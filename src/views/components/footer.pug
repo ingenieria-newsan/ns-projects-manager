@@ -1,0 +1,11 @@
+section(name='footer').bg-dark.fixed-bottom
+    .container
+        .row.py-1.text-muted
+            .col-4 &copy; 2021
+            .col-4
+                if message
+                    #{message}
+            .col-4.text-end
+                span alpha
+                    a(href="https://github.com/jcvels?tab=repositories", target="_blank", rel="noopener noreferrer").text-muted.ms-3
+                        i.bi.bi-github

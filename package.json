@@ -1,0 +1,21 @@
+{
+  "name": "ns-projects-manager",
+  "version": "1.0.0",
+  "description": "GPI - Gestión Proyectos Ingeniería",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "author": "Jorge Claudio Pauvels",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}

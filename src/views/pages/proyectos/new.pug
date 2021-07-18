@@ -1,0 +1,129 @@
+extends ../../index.pug
+block main
+    .mt-5
+        h1.display-6.mb-5 Nuevo proyecto
+        form(action="/proyectos/nuevo", method="post")
+            .row
+                .col-sm-9
+                    .p-4.mb-3.border.bg-white
+                        .lead.mb-3 Información del proyecto
+                        .row
+                            .col-sm-4.mb-3
+                                .form-group
+                                    label(for="projectBiz").form-label Negocio
+                                    select(name="projectBiz", required="true").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.projectBiz
+                                            option(value=item) #{item}
+                            .col-sm-4      
+                                .form-group
+                                    label(for="productType").form-label Producto
+                                    select(name="productType", required="true").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.productType
+                                            option(value=item) #{item}
+                            .col-sm-2
+                                .form-group
+                                    label(for="productionSchema").form-label Esquema
+                                    select(name="productionSchema", required="true").form-select
+                                        option(value="") Seleccione
+                                        each item in options.productionSchema
+                                            option(value=item) #{item}
+                        .row
+                            .col-sm-6
+                                .form-group
+                                    label(for="projectLeader", required="true").form-label Lider del proyecto
+                                    select(name="projectLeader", required="true").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.projectLeader
+                                            option(value=item) #{item}                                    
+                            .col-sm-3
+                                .form-group
+                                    label(for="projectRequiredDate").form-label Demanda
+                                    input(type="date", name="projectRequiredDate").form-control
+                    .p-4.mb-3.border.bg-white
+                        .lead.mb-3 Información del producto
+                        .row.mb-3
+                            .col-sm-4
+                                .form-group
+                                    label(for="productBrand").form-label Marca
+                                    select(name="productBrand").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.productBrand
+                                            option(value=item) #{item}
+                            .col-sm-4                    
+                                .form-group
+                                    label(for="productModel").form-label Modelo
+                                    input(type="text", name="productModel").form-control
+                        .row.mb-3
+                            .col-sm-12
+                                .form-group
+                                    label(for="productDescription").form-label Descripción
+                                    input(type="text", name="productDescription").form-control
+                        .row
+                            .col-sm-4
+                                .form-group
+                                    label(for="supplierName").form-label Proveedor
+                                    select(name="supplierName").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.supplierName
+                                            option(value=item) #{item}                                     
+                            .col-sm-4
+                                .form-group
+                                    label(for="supplierModel").form-label Modelo Proveedor
+                                    input(type="text", name="supplierModel").form-control
+                            .col-sm-4
+                                .form-group
+                                    label(for="facilityName").form-label Fábrica
+                                    select(name="facilityName").form-select
+                                        option(value="") Seleccione un valor
+                                        each item in options.facilityName
+                                            option(value=item) #{item}
+                .col-sm-3
+                    .p-4.mb-3.border.bg-white
+                        .lead.mb-3 Tareas requeridas
+                        .form-check
+                            input#productEvalChina.form-check-input(type='checkbox', name="productEvalChina.required" value='true')
+                            label.form-check-label(for='productEvalChina') Evaluación en China
+                        .form-check
+                            input#productEvalArgentina.form-check-input(type='checkbox', name="productEvalArgentina.required" value='true')
+                            label.form-check-label(for='productEvalArgentina') Evaluación local
+                        .form-check
+                            input#productCert.form-check-input(type='checkbox', name="productCert.required" value='true')
+                            label.form-check-label(for='productCert') Certificación seguridad eléctrica
+                        .form-check
+                            input#productSetup.form-check-input(type='checkbox', name="productSetup.required" value='true')
+                            label.form-check-label(for='productSetup') Consolidación GEN-D
+                        .form-check
+                            input#productRatingLabel.form-check-input(type='checkbox', name="productRatingLabel.required" value='true')
+                            label.form-check-label(for='productRatingLabel') Etiqueta de identificación            
+                        .form-check
+                            input#productUserManual.form-check-input(type='checkbox', name="productUserManual.required" value='true')
+                            label.form-check-label(for='productUserManual') Manual de usuario
+                        .form-check
+                            input#productGiftBox.form-check-input(type='checkbox', name="productGiftBox.required" value='true')
+                            label.form-check-label(for='productGiftBox') Embalaje unitario
+                        .form-check
+                            input#productMasterBox.form-check-input(type='checkbox', name="productMasterBox.required" value='true')
+                            label.form-check-label(for='productMasterBox') Embalaje múltiple
+                        .form-check
+                            input#productSoftware.form-check-input(type='checkbox', name="productSoftware.required" value='true')
+                            label.form-check-label(for='productSoftware') Software o firmware
+                        .form-check
+                            input#productBom.form-check-input(type='checkbox', name="productBom.required" value='true')
+                            label.form-check-label(for='productBom') Lista de materiales
+                        .form-check
+                            input#productEnacom.form-check-input(type='checkbox', name="productEnacom.required" value='true')
+                            label.form-check-label(for='productEnacom') Homologación ENACOM
+                        .form-check
+                            input#productEficiency.form-check-input(type='checkbox', name="productEficiency.required" value='true')
+                            label.form-check-label(for='productEficiency') Eficiencia Energética
+                        .form-check
+                            input#productPSI.form-check-input(type='checkbox', name="productPSI.required" value='true')
+                            label.form-check-label(for='productPSI') Inspección pre-embarque
+                        .form-check
+                            input#productNPI.form-check-input(type='checkbox', name="productNPI.required" value='true')
+                            label.form-check-label(for='productNPI') Fabricación
+                    .form-group.d-flex.px-4
+                        input(type="reset", value="Cancelar").btn.btn-secondary
+                        input(type="submit", value="Guardar").btn.btn-primary.ms-auto
