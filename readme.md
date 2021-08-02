@@ -1,5 +1,4 @@
-# GPI
-Gestion Proyectos Ingeniería
+# GPI - Gestion Proyectos Ingeniería
 
 ## Estado de proyectos
 - 0 Cancelado

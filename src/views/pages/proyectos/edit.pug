@@ -39,6 +39,12 @@ block main
                     //- consolidación
                     include ./partials/productSetup.pug
 
+                    //- etiqueta
+                    include ./partials/productRatingLabel.pug
+
+                    //- manual
+                    include ./partials/productUserManual.pug
+
                 .col-sm-3 
 
                     //- panel de control de estado
@@ -51,7 +57,7 @@ block main
                     include ./partials/closeProjectPanel.pug
 
                     //- botones de acción
-                    .form-group.d-flex.px-4
+                    .form-group.d-flex
                         input(type="reset", value="Borrar cambios").btn.btn-secondary
                         input(type="submit", value="Guardar").btn.btn-primary.ms-auto
 

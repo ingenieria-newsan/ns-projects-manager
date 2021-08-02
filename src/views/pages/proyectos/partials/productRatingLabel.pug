@@ -1,0 +1,11 @@
+if project.productRatingLabel.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productRatingLabelPanel", style="cursor:pointer; cursor: hand") Etiqueta de identificación
+            - if(project.productRatingLabel.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+        #productRatingLabelPanel( class = project.productRatingLabel.closed ? 'collapse' : '' )
+            .row.my-3
+                .col-sm-4
+                    .form-check.form-switch
+                        label.form-check-label(for='productRatingLabelCompleted') Marcar tarea como realizada
+                        input#productRatingLabelCompleted(type='checkbox', value="true", name="productRatingLabelCompleted", checked=project.productRatingLabel.closed).form-check-input

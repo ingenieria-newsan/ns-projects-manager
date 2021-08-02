@@ -1,0 +1,11 @@
+if project.productUserManual.required
+    .p-4.mb-3.border.bg-white
+        .lead(data-bs-toggle="collapse", data-bs-target="#productUserManualPanel", style="cursor:pointer; cursor: hand") Manual de Usuario
+            - if(project.productUserManual.closed)
+                i.bi.bi-check-circle-fill.text-success.ms-3
+        #productUserManualPanel( class = project.productUserManual.closed ? 'collapse' : '' )
+            .row.my-3
+                .col-sm-4
+                    .form-check.form-switch
+                        label.form-check-label(for='productUserManualCompleted') Marcar tarea como realizada
+                        input#productRatingLabelCompleted(type='checkbox', value="true", name="productUserManualCompleted", checked=project.productUserManual.closed).form-check-input

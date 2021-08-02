@@ -1,3 +1,4 @@
+// @ts-check
 const express = require('express');
 const path = require('path');
 const morgan = require("morgan");
@@ -9,8 +10,8 @@ const projectsController = require("./controllers/projects.controller");
 
 /* configuración global */
 const app_mode = process.env.NODE_ENV || 'development';
-var port = 80;
-if( process.env.PORT ) port = process.env.PORT /* cambio el puerto de escucha si fue especificado como variable de entorno */
+let port = 80;
+if( process.env.PORT ) port = Number.parseInt( process.env.PORT ) /* cambio el puerto de escucha si fue especificado como variable de entorno */
 
 /* creo una app de express */
 const app = express();

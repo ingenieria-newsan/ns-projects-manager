@@ -1,0 +1,11 @@
+.selection-item {
+    cursor              :   pointer;
+    cursor              :   hand;
+    transition-delay    :   0.2;
+}
+.selection-item:hover {
+    border-color        :   tomato;
+}
+.body-backgroud {
+    background-color    :   whitesmoke;
+}
